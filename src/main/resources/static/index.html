@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CricketPulse | Live Score Centre</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">CP</span><span>Cricket<span class="brand-light">Pulse</span><small>LIVE SCORE CENTRE</small></span></a>
+  <div class="top-actions"><span class="live-dot"></span><span>Live updates</span><span id="updatedAt" class="updated">Connecting…</span></div>
+</header>
+<main class="page">
+  <section class="hero">
+    <div><p class="eyebrow">THE GAME, IN REAL TIME</p><h1>Every run tells<br><span>a story.</span></h1><p class="hero-copy">Live scores, match momentum and player numbers in one place.</p></div>
+    <div class="hero-ball"><div class="ball-seam"></div><span>PLAY<br>ON</span></div>
+  </section>
+  <section class="stats-grid" id="summaryCards"></section>
+  <section class="section-head"><div><p class="eyebrow">MATCH CENTRE</p><h2>Follow the action</h2></div><button class="primary-btn" id="newMatchBtn">＋ New match</button></section>
+  <section class="filters">
+    <label class="search-box"><span>⌕</span><input id="searchInput" placeholder="Search teams or venue…"></label>
+    <div class="filter-tabs" id="filterTabs"><button class="active" data-status="ALL">All matches</button><button data-status="LIVE">● Live</button><button data-status="SCHEDULED">Upcoming</button><button data-status="COMPLETED">Completed</button></div>
+  </section>
+  <section class="match-grid" id="matchGrid"><div class="loading">Loading matches…</div></section>
+  <section class="section-head stats-heading"><div><p class="eyebrow">THE NUMBERS</p><h2>Player leaderboard</h2></div><select id="playerMatchFilter"><option value="">All matches</option></select></section>
+  <section class="table-wrap"><table><thead><tr><th>PLAYER</th><th>RUNS</th><th>BALLS</th><th>4s</th><th>6s</th><th>WICKETS</th><th>BOWLED</th></tr></thead><tbody id="playerRows"><tr><td colspan="7">Loading player stats…</td></tr></tbody></table></section>
+  <footer><span>CricketPulse</span><span>Student-built scoring simulation · Refreshes every 5 seconds</span></footer>
+</main>
+<dialog id="matchDialog"><form id="matchForm"><div class="dialog-head"><div><p class="eyebrow">MATCH SETUP</p><h2>Create a match</h2></div><button type="button" class="close-btn" id="closeMatchDialog">×</button></div><label>Team one<input name="teamOne" required placeholder="e.g. Mumbai Falcons"></label><label>Team two<input name="teamTwo" required placeholder="e.g. Pune Strikers"></label><label>Venue<input name="venue" required placeholder="Stadium / ground"></label><div class="form-row"><label>Format<select name="format"><option>T20</option><option>ODI</option><option>TEST</option></select></label><label>Status<select name="status"><option>SCHEDULED</option><option>LIVE</option></select></label></div><p id="formError" class="error-text"></p><button class="primary-btn full-btn" type="submit">Create match</button></form></dialog>
+<dialog id="scoreDialog"><div id="scoreDialogContent"></div></dialog>
+<div id="toast" class="toast"></div>
+<script src="/app.js"></script>
+</body>
+</html>
